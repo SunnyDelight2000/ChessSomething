@@ -12,11 +12,34 @@ using namespace std;
 
 int main()
 {
-    int ROW_SIZE = 8;
-    int COLUMN_SIZE = 8;
+    const int ROW_SIZE = 8;
+    const int COLUMN_SIZE = 8;
+    
+    enum PieceType
+    {
+        EMPTY = 0,
+        PAWN = 1,
+        TOWER = 2,
+        BISHOP = 3,
+        HORSE = 4,
+        QUEEN = 5,
+        KING = 6
+    };
+    
+    enum PieceTeam
+    {
+        Red,
+        Green
+    };
+    
+    struct Piece 
+    {
+        PieceType type,
+        PieceTeam team 
+    };
     
     int board[ROW_SIZE][COLUMN_SIZE] = { 
-    { 1, 2, 3, 4, 5, 6, 7, 8 },
+    { TOWER, HORSE, 3, 4, 5, 6, 7, 8 },
     { 1, 2, 3, 4, 5, 6, 7, 8 },
     { 1, 2, 3, 4, 5, 6, 7, 8 },
     { 1, 2, 3, 4, 5, 6, 7, 8 },
@@ -39,3 +62,4 @@ int main()
     
     return 0;
 }
+
